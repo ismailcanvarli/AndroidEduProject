@@ -2,6 +2,7 @@ package com.example.helloandroid
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -53,12 +54,21 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.i("MainActivity", "onSaveInstanceState")
+
+        // Kullanıcıdan alınan veriyi kaydetme işlemi
+        val etUserField = findViewById<EditText>(R.id.etUserField)
+        val userField = etUserField.text.toString()
+        outState.putString("userField", userField)
     }
 
     // Uygulama bellekten geri yüklendiğinde çalışan metot
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         Log.i("MainActivity", "onRestoreInstanceState")
+
+        val userField = savedInstanceState.getString("userField")
+        val etUserField = findViewById<EditText>(R.id.etUserField)
+        etUserField.setText(userField)
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {

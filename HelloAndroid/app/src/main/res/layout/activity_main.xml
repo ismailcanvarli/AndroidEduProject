@@ -8,12 +8,30 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="115dp"
+        android:layout_marginBottom="98dp"
         android:text="Hello World!"
+        app:layout_constraintBottom_toTopOf="@+id/etUserField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.161" />
+
+    <EditText
+        android:id="@+id/etUserField"
+        android:layout_width="409dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="409dp"
+        android:textSize="16dp"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
