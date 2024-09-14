@@ -1,34 +1,27 @@
-package com.example.helloandroid
+package com.example.helloandroid.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.example.helloandroid.ui.SecondActivity
+import com.example.helloandroid.R
 
-class MainActivity : AppCompatActivity() {
-    // İlk çalışan metot
+class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("MainActivity", "onCreate1")
-        setContentView(R.layout.activity_main)
-        Log.i("MainActivity", "onCreate2")
+        setContentView(R.layout.activity_second)
+        Log.e("SecondActivity", "onCreate")
 
-        // Yeni buton ile başka bir aktiviteye geçiş
-        val btnOpenSecondActivity = findViewById<Button>(R.id.btnOpenSecondActivity)
-        btnOpenSecondActivity.setOnClickListener {
-            val intent = android.content.Intent(this, SecondActivity::class.java)
-            // Intent ile veri gönderdik
-            intent.putExtra("key", "value")
+        // Intent ile gönderilen veriyi aldık
+        val intent = intent
+        val key = intent.getStringExtra("key")
+        Log.e("SecondActivity", "key: $key")
 
-            // bundle ile veri gönderdik
-            val bundle = Bundle()
-            bundle.putString("key1", "value1")
-            intent.putExtras(bundle)
+        // Bundle ile gönderilen veriyi aldık
+        val bundle = intent.extras
+        val key1 = bundle?.getString("key1")
+        Log.e("SecondActivity", "key1: $key1")
 
-            startActivity(intent)
-        }
     }
 
     // Uygulama başladığında çalışan metot
@@ -92,5 +85,4 @@ class MainActivity : AppCompatActivity() {
         super.onPostCreate(savedInstanceState)
         Log.i("MainActivity", "onPostCreate")
     }
-
 }

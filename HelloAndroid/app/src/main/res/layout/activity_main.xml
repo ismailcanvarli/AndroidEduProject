@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_dark"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/textView2"
@@ -25,13 +27,21 @@
         android:layout_width="409dp"
         android:layout_height="60dp"
         android:layout_marginBottom="409dp"
-        android:textSize="16dp"
         android:text="TextView"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        />
+    <Button
+        android:id="@+id/btnOpenSecondActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="Sonraki dosyaya geç"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUserField" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
