@@ -81,4 +81,13 @@ class MainActivity : AppCompatActivity() {
         super.onUserInteraction()
         Log.i("MainActivity", "onUserInteraction")
     }
+
+    // Bu şekilde public bir fonksiyon oluşturulduğunda test edilebilir.
+    fun testFunction() {
+        Log.i("MainActivity", "testFunction")
+    }
+
+    fun testFunction2(name: String?, surName: String?): String {
+        return "$name $surName"
+    }
 }
