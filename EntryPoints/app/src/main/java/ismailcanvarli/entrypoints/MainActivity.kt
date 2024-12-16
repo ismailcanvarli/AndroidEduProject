@@ -1,6 +1,5 @@
 package ismailcanvarli.entrypoints
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -45,10 +44,6 @@ class MainActivity : AppCompatActivity() {
         Log.i("MainActivity", "onRestart")
     }
 
-    override fun onContentChanged() {
-        super.onContentChanged()
-    }
-
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         Log.i("MainActivity", "onSaveInstanceState")
@@ -59,10 +54,6 @@ class MainActivity : AppCompatActivity() {
         Log.i("MainActivity", "onRestoreInstanceState")
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
-
     override fun onUserLeaveHint() {
         super.onUserLeaveHint()
         Log.i("MainActivity", "onUserLeaveHint")
@@ -71,9 +62,5 @@ class MainActivity : AppCompatActivity() {
     override fun onUserInteraction() {
         super.onUserInteraction()
         Log.i("MainActivity", "onUserInteraction")
-    }
-
-    override fun onNewIntent(intent: Intent) {
-        super.onNewIntent(intent)
     }
 }
