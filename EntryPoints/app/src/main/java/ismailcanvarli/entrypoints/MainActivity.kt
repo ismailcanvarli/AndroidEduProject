@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
         Log.i("MainActivity", "onCreate1")
         setContentView(R.layout.activity_main)
         Log.i("MainActivity", "onCreate2")
-
     }
 
     override fun onStart() {
@@ -38,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.i("MainActivity", "onDestroy")
     }
+
+    // Buradan sonraki fonskiyonlar ekstra olarak eklendi.
 
     override fun onRestart() {
         super.onRestart()
