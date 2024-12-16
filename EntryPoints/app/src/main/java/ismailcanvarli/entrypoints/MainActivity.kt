@@ -5,12 +5,20 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private val cameraComponent = CameraComponent()
+    private val cameraComponent2 = CameraComponent2()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         Log.i("MainActivity", "onCreate1")
         setContentView(R.layout.activity_main)
         Log.i("MainActivity", "onCreate2")
+
+        // Bu şekilde cameraComponent sınıfı oluşturulduğunda yaşam döngüsü
+        // yöneticisi olarak eklenmiş olur.
+        lifecycle.addObserver(cameraComponent)
     }
 
     override fun onStart() {
@@ -36,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.i("MainActivity", "onDestroy")
+        lifecycle.removeObserver(cameraComponent)
     }
 
     // Buradan sonraki fonskiyonlar ekstra olarak eklendi.
