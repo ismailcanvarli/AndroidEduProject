@@ -1,13 +1,16 @@
 package ismailcanvarli.entrypoints
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var buttonOpenSettingsActivity: Button
+
     private val cameraComponent = CameraComponent()
-    private val cameraComponent2 = CameraComponent2()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +22,11 @@ class MainActivity : AppCompatActivity() {
         // Bu şekilde cameraComponent sınıfı oluşturulduğunda yaşam döngüsü
         // yöneticisi olarak eklenmiş olur.
         lifecycle.addObserver(cameraComponent)
+
+        buttonOpenSettingsActivity = findViewById<Button>(R.id.buttonOpenSettingsActivity)
+        buttonOpenSettingsActivity.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
     }
 
     override fun onStart() {
