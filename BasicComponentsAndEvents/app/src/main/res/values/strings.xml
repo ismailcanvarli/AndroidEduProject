@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BasicComponentsAndEvents</string>
+    <string name="hardcoded_string">Hardcoded String</string>
 </resources>
