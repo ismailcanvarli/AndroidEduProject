@@ -6,13 +6,12 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/red"
-    tools:context=".MainActivity">
+    tools:context=".SecondActivity">
 
     <Button
-        android:id="@+id/btnOpenSecondActivity"
+        android:id="@+id/btnOpenMainActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Second Activty!" />
+        android:text="Open Main Activity" />
 
 </LinearLayout>
