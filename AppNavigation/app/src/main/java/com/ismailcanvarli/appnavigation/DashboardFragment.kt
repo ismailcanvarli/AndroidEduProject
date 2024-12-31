@@ -23,8 +23,14 @@ class DashboardFragment : Fragment() {
         // DashboardFragment içerisindeki btnOpenProfileFragment butonuna
         // tıklandığında ProfileFragment'e geçiş yapılır.
         val btnOpenProfileFragment = view.findViewById<Button>(R.id.btn_open_profile_fragment)
+        val btnOpenSettingsFragment = view.findViewById<Button>(R.id.btn_open_settings_fragment)
+
         btnOpenProfileFragment.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_profileFragment)
+        }
+
+        btnOpenSettingsFragment.setOnClickListener {
+            findNavController().navigate(R.id.action_dashboardFragment_to_settingsDialogFragment)
         }
     }
 }

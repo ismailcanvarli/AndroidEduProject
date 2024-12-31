@@ -12,10 +12,26 @@
         <action
             android:id="@+id/action_dashboardFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_settingsDialogFragment"
+            app:destination="@id/settingsDialogFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.ismailcanvarli.appnavigation.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile">
+
+        <argument
+            android:name="name"
+            android:defaultValue="Ismail"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/settingsDialogFragment"
+        android:name="com.ismailcanvarli.appnavigation.SettingsDialogFragment"
+        android:label="fragment_settings_dialog"
+        tools:layout="@layout/fragment_settings_dialog" />
 </navigation>
