@@ -15,16 +15,27 @@
         <action
             android:id="@+id/action_dashboardFragment_to_settingsDialogFragment"
             app:destination="@id/settingsDialogFragment" />
+
+        <deepLink app:uri="https://www.example.com/profile/{userId}" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_secondActivity"
+            app:destination="@id/secondActivity" />
+
+        <activity
+            android:id="@+id/secondActivity"
+            android:name="com.ismailcanvarli.appnavigation.SecondActivity"
+            android:label="activity_second_activty"
+            tools:layout="@layout/activity_second_activty" />
     </fragment>
+
+    <include
+        android:id="@+id/nav_graph_payment"
+        app:graph="@navigation/nav_graph_payment" />
 
     <dialog
         android:id="@+id/settingsDialogFragment"
         android:name="com.ismailcanvarli.appnavigation.SettingsDialogFragment"
         android:label="fragment_settings_dialog"
         tools:layout="@layout/fragment_settings_dialog" />
-
-    <include
-        android:id="@+id/nav_graph_payment"
-        app:graph="@navigation/nav_graph_payment" />
 
 </navigation>

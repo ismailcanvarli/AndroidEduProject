@@ -1,5 +1,6 @@
 package com.ismailcanvarli.appnavigation
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,7 @@ class DashboardFragment : Fragment() {
         // tıklandığında ProfileFragment'e geçiş yapılır.
         val btnOpenProfileFragment = view.findViewById<Button>(R.id.btn_open_profile_fragment)
         val btnOpenSettingsFragment = view.findViewById<Button>(R.id.btn_open_settings_fragment)
+        val btnOpenSecondActivity = view.findViewById<Button>(R.id.btn_open_second_activity)
 
         btnOpenProfileFragment.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_profileFragment)
@@ -31,6 +33,12 @@ class DashboardFragment : Fragment() {
 
         btnOpenSettingsFragment.setOnClickListener {
             findNavController().navigate(R.id.action_dashboardFragment_to_settingsDialogFragment)
+        }
+
+        btnOpenSecondActivity.setOnClickListener {
+            val userId = 10
+            val deepLinkUri = Uri.parse("https://www.example.com/profile/$userId")
+            findNavController().navigate(deepLinkUri)
         }
     }
 }
