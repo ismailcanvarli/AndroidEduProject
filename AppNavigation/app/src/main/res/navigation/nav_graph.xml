@@ -11,22 +11,10 @@
         tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashboardFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/navigation" />
         <action
             android:id="@+id/action_dashboardFragment_to_settingsDialogFragment"
             app:destination="@id/settingsDialogFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.ismailcanvarli.appnavigation.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile">
-
-        <argument
-            android:name="name"
-            android:defaultValue="Ismail"
-            app:argType="string"
-            app:nullable="true" />
     </fragment>
 
     <dialog
@@ -34,4 +22,9 @@
         android:name="com.ismailcanvarli.appnavigation.SettingsDialogFragment"
         android:label="fragment_settings_dialog"
         tools:layout="@layout/fragment_settings_dialog" />
+
+    <include
+        android:id="@+id/nav_graph_payment"
+        app:graph="@navigation/nav_graph_payment" />
+
 </navigation>
