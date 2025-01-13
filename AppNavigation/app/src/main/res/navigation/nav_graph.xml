@@ -21,11 +21,15 @@
             android:id="@+id/action_dashboardFragment_to_secondActivity"
             app:destination="@id/secondActivity" />
 
+        <action
+            android:id="@+id/action_dashboardFragment_to_nav_graph_payment"
+            app:destination="@id/nav_graph_payment" />
+
         <activity
             android:id="@+id/secondActivity"
             android:name="com.ismailcanvarli.appnavigation.SecondActivity"
-            android:label="activity_second_activty"
-            tools:layout="@layout/activity_second_activty" />
+            android:label="activity_second_activity"
+            tools:layout="@layout/activity_second_activity" />
     </fragment>
 
     <include
