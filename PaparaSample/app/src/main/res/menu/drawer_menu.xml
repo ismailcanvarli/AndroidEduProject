@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_notifications"
+        android:title="Notifications" />
+
+    <item
+        android:id="@+id/qrDialogFragment"
+        android:icon="@drawable/ic_location"
+        android:title="Search ATM" />
+
+    <item
+        android:id="@+id/moneyTransferDialogFragment"
+        android:icon="@drawable/ic_send"
+        android:title="Withdraw / Deposit" />
 
 </menu>
