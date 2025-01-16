@@ -31,17 +31,17 @@
         android:label="fragment_papara_card"
         tools:layout="@layout/fragment_papara_card" />
     <fragment
-        android:id="@+id/notificationFragment2"
+        android:id="@+id/notificationFragment"
         android:name="com.ismailcanvarli.paparasample.NotificationFragment"
         android:label="fragment_notification"
         tools:layout="@layout/fragment_notification" />
     <fragment
-        android:id="@+id/withdrawDepositFragment2"
+        android:id="@+id/withdrawDepositFragment"
         android:name="com.ismailcanvarli.paparasample.WithdrawDepositFragment"
         android:label="fragment_withdraw_deposit"
         tools:layout="@layout/fragment_withdraw_deposit" />
     <fragment
-        android:id="@+id/searchAtm"
+        android:id="@+id/searchAtmFragment"
         android:name="com.ismailcanvarli.paparasample.SearchAtm"
         android:label="fragment_search_atm"
         tools:layout="@layout/fragment_search_atm" />
