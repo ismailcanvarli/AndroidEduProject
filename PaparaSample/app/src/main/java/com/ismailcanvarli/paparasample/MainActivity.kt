@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 
+        // Navigation drawer ile ilgili işlemler
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.dashboardFragment,
@@ -46,11 +47,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initEvents() {
+        // toolbar için
         setSupportActionBar(toolbar)
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
+
+        // Bu kısım bottom var için
         navigationView.setupWithNavController(navHostFragment.navController)
         bottomNavigationView.setupWithNavController(navHostFragment.navController)
 
+        // Geri tuşu işlemleri drawer için
         onBackPressedDispatcher.addCallback(object: OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (drawerLayout.isOpen) {
@@ -62,6 +67,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    // Navigation drawer için geri tuşu işlemleri
     override fun onSupportNavigateUp(): Boolean {
         return navHostFragment.navController.navigateUp() || super.onSupportNavigateUp()
     }
