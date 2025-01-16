@@ -1,6 +1,7 @@
 package com.ismailcanvarli.paparasample
 
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -17,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navigationView: NavigationView
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navHostFragment: NavHostFragment
-
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,12 +40,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.dashboardFragment,
                 R.id.qrDialogFragment,
-                R.id.moneyTransferDialogFragment,
-                R.id.paymentFragment,
-                R.id.paparaCardFragment,
-                R.id.notificationFragment,
-                R.id.searchAtmFragment,
-                R.id.withdrawDepositFragment
+                R.id.moneyTransferDialogFragment
             ), drawerLayout
         )
     }
@@ -55,5 +50,19 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navHostFragment.navController, appBarConfiguration)
         navigationView.setupWithNavController(navHostFragment.navController)
         bottomNavigationView.setupWithNavController(navHostFragment.navController)
+
+        onBackPressedDispatcher.addCallback(object: OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (drawerLayout.isOpen) {
+                    drawerLayout.close()
+                } else {
+                    finish()
+                }
+            }
+        })
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navHostFragment.navController.navigateUp() || super.onSupportNavigateUp()
     }
 }
