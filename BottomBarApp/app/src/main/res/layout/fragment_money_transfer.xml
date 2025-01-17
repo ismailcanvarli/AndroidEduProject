@@ -3,12 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MoneyTransferFragment"
-    android:background="@color/blue">
+    android:background="@color/blue"
+    tools:context=".fragments.MoneyTransferFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center"
+        android:text="Money Transfer"
+        android:textSize="36sp" />
 
 </FrameLayout>
