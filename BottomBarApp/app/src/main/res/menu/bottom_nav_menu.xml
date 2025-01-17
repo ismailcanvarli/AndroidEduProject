@@ -7,7 +7,7 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/moneyTransferDialogFragment"
+        android:id="@+id/moneyTransferFragment"
         android:icon="@drawable/ic_send"
         android:title="Money Transfer" />
 
